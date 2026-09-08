@@ -1,0 +1,191 @@
+:root {
+    --uchiha-red: #d60000;
+    --uchiha-glow: rgba(214, 0, 0, 0.5);
+    --bg-dark: #0a0a0c;
+    --card-bg: #121216;
+    --text-white: #f1f1f5;
+    --text-muted: #8a8a9e;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Tahoma', sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #070709;
+    height: 100vh;
+    padding: 20px;
+    border-left: 1px solid #222;
+}
+
+.brand h2 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px var(--uchiha-red);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.nav-links li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-links li.active a, .nav-links li a:hover {
+    background-color: var(--uchiha-red);
+    color: #fff;
+    box-shadow: 0 0 10px var(--uchiha-glow);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.sharingan-banner {
+    background: radial-gradient(circle, #2a0505 0%, var(--card-bg) 80%);
+    border: 1px solid var(--uchiha-red);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
+.uchiha-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.uchiha-table th, .uchiha-table td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #222;
+}
+
+.tag {
+    background: #1f1f2a;
+    color: #ffb703;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.status.active { color: #2ecc71; }
+.status.expired { color: #e74c3c; }
+
+.btn-sub {
+    color: var(--uchiha-red);
+    text-decoration: none;
+    border: 1px solid var(--uchiha-red);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+/* Sharingan Animation */
+.sharingan-eye {
+    width: 80px;
+    height: 80px;
+    background-color: var(--uchiha-red);
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    position: relative;
+    border: 3px solid #000;
+    box-shadow: 0 0 20px var(--uchiha-red);
+    animation: rotateSharingan 6s linear infinite;
+}
+
+.pupil {
+    width: 22px;
+    height: 22px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tomoe {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.tomoe-1 { top: 10px; left: 34px; }
+.tomoe-2 { bottom: 16px; left: 12px; }
+.tomoe-3 { bottom: 16px; right: 12px; }
+
+@keyframes rotateSharingan {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Sub Page */
+.sub-body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sub-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--uchiha-red);
+    box-shadow: 0 0 25px var(--uchiha-glow);
+    padding: 30px;
+    border-radius: 20px;
+    width: 380px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.qr-placeholder {
+    font-size: 4rem;
+    color: var(--uchiha-red);
+    margin: 20px 0;
+}
+
+.sub-link-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sub-link-box input {
+    flex: 1;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.btn-copy {
+    background: var(--uchiha-red);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
