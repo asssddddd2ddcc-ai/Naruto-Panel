@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اشتراک اوچیها - {{ user.username }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="sub-body">
+    <div class="sub-container">
+        <div class="sharingan-eye">
+            <div class="iris">
+                <div class="pupil"></div>
+                <div class="tomoe tomoe-1"></div>
+                <div class="tomoe tomoe-2"></div>
+                <div class="tomoe tomoe-3"></div>
+            </div>
+        </div>
+        
+        <h2>طومار اشتراک شینوبی</h2>
+        <p class="user-title">{{ user.username }}</p>
+
+        <div class="info-box">
+            <div class="info-item">
+                <span>مصرف چاکرا (حجم):</span>
+                <strong>{{ user.used }} / {{ user.total }}</strong>
+            </div>
+            <div class="info-item">
+                <span>وضعیت اتصال:</span>
+                <strong class="status {{ user.status }}">{{ user.status }}</strong>
+            </div>
+        </div>
+
+        <div class="qr-placeholder">
+            <i class="fas fa-qrcode"></i>
+            <p>اسکن لینک با v2rayNG / Hiddify / Streisand</p>
+        </div>
+
+        <div class="sub-link-box">
+            <input type="text" value="{{ sub_link }}" id="subInput" readonly>
+            <button onclick="copySubLink()" class="btn-copy"><i class="fas fa-copy"></i> کپی لینک</button>
+        </div>
+    </div>
+
+    <script>
+        function copySubLink() {
+            var copyText = document.getElementById("subInput");
+            copyText.select();
+            document.execCommand("copy");
+            alert("لینک اشتراک شارینگان کپی شد!");
+        }
+    </script>
+</body>
+</html>
